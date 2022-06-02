@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamentos</title>
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <style>
+        body {
+            margin: 0;
+            font-weight: 400;
+            background-color: #E4E4E4;
+        }
+
+        header {
+            height: 60px;
+            background-color: #9A9A9A;
+            color: #fff;
+
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: end;
+            align-items: center;
+
+        }
+
+        .linkUser {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .linkUser svg {
+            color: rgb(0, 0, 0);
+            border-radius: 50%;
+            background-color: #fff;
+            padding: 5px;
+            margin: 5px;
+        }
+
+        .divContent {
+            background-color: #fff;
+
+            margin: 20px;
+
+            border-style: solid;
+            border-color: rgb(167, 167, 167);
+            border-width: 1px;
+        }
+
+        .divMenor {
+
+            background-color: #fff;
+
+            margin: 20px;
+
+            border-style: solid;
+            border-color: rgb(167, 167, 167);
+            border-width: 1px;
+        }
+
+        #divTabela {
+            width: 53rem;
+        }
+
+        .formBuscar {
+            width: 80%;
+        }
+
+
+
+        .colunaTabela * {
+            margin: 10px;
+        }
+
+        @media only screen and (max-width: 1240px) {
+            #divsMenores {
+                width: 40rem;
+            }
+        }
+
+        @media only screen and (min-width: 1240px) {
+            #divsMenores {
+                width: 20rem;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="m-2">
+
+            <a class="linkUser nav-link" href="#">
+                <span>Dra. Ana Júlia</span>
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" fill="currentColor" class="bi bi-person"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+                </svg>
+            </a>
+
+        </div>
+
+    </header>
+
+    <main>
+
+        <div class="container-xxl d-flex flex-wrap-reverse justify-content-start">
+
+            <div id="divTabela" class="divContent">
+
+                <div class="p-4">
+                    <h2>05 de março 2022</h2>
+                    <h5>Quarta feira</h5>
+                </div>
+
+                <div class="m-3 d-flex flex-wrap justify-content-start"">
+
+                    <form action="" class=" formBuscar" method="get">
+
+                    <div class="input-group rounded-0">
+
+                        <span class="input-group-text rounded-0 btn-light" id="basic-addon1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-search" viewBox="0 0 16 16">
+                                <path
+                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                            </svg>
+                        </span>
+
+                        <input type="text" class="form-control rounded-0" placeholder="Pesquisar" aria-label="Pesquisar"
+                            aria-describedby="basic-addon1">
+
+                    </div>
+
+                    </form>
+
+                    <button class="btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-sliders" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M11.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM9.05 3a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0V3h9.05zM4.5 7a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM2.05 8a2.5 2.5 0 0 1 4.9 0H16v1H6.95a2.5 2.5 0 0 1-4.9 0H0V8h2.05zm9.45 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-2.45 1a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0v-1h9.05z" />
+                        </svg>
+                    </button>
+
+                    <button class="btn btn-success">Editar</button>
+
+                </div>
+
+                <table class="table">
+
+                    <tr>
+                        <td class="d-flex  justify-content-between">
+                            <div class="colunaTabela">
+                                <input type="checkbox">
+
+                                <svg width="20" height="20">
+                                    <circle cx="8" cy="8" r="8" fill="green" />
+                                </svg>
+
+                                <span>8:00</span>
+
+                                <span>Maria Pereira de Sousa</span>
+                            </div>
+
+                            <div>
+                                <button class="btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                        class="bi bi-trash" viewBox="0 0 16 16">
+                                        <path
+                                            d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                                        <path fill-rule="evenodd"
+                                            d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td class="d-flex  justify-content-between">
+                            <div class="colunaTabela">
+                                <input type="checkbox">
+
+                                <svg width="20" height="20">
+                                    <circle cx="8" cy="8" r="8" fill="#0080FF" />
+                                </svg>
+
+                                <span>8:00</span>
+
+                                <span>Maria Pereira de Sousa</span>
+                            </div>
+
+                            <div>
+                                <button class="btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                        class="bi bi-trash" viewBox="0 0 16 16">
+                                        <path
+                                            d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                                        <path fill-rule="evenodd"
+                                            d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td class="d-flex  justify-content-between">
+                            <div class="colunaTabela">
+                                <input type="checkbox">
+
+                                <svg width="20" height="20">
+                                    <circle cx="8" cy="8" r="8" fill="red" />
+                                </svg>
+
+                                <span>8:00</span>
+
+                                <span>Maria Pereira de Sousa</span>
+                            </div>
+
+                            <div>
+                                <button class="btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                        class="bi bi-trash" viewBox="0 0 16 16">
+                                        <path
+                                            d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                                        <path fill-rule="evenodd"
+                                            d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td class="d-flex  justify-content-between">
+                            <div class="colunaTabela">
+                                <input type="checkbox">
+
+                                <svg width="20" height="20">
+                                    <circle cx="8" cy="8" r="8" fill="#7B7B7B" />
+                                </svg>
+
+                                <span>8:00</span>
+
+                                <span>Maria Pereira de Sousa</span>
+                            </div>
+
+                            <div>
+                                <button class="btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                        class="bi bi-trash" viewBox="0 0 16 16">
+                                        <path
+                                            d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                                        <path fill-rule="evenodd"
+                                            d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </td>
+
+                    </tr>
+
+                </table>
+
+            </div>
+
+
+            <div id="divsMenores" class="d-flex flex-wrap flex-row ">
+                <div class="divMenor flex-grow-1">
+
+                    <h5 class="m-2">Dados da semana</h5>
+                    <hr>
+
+                    <table class="table table-borderless">
+                        <tr>
+
+                            <td class="colunaTabela">
+                                <svg width="20" height="20">
+                                    <circle cx="8" cy="8" r="8" fill="green" />
+                                </svg>
+
+                                <span>Presente</span>
+                            </td>
+
+                            <td class="colunaTabela">
+                                13
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td class="colunaTabela">
+                                <svg width="20" height="20">
+                                    <circle cx="8" cy="8" r="8" fill="#0080FF" />
+                                </svg>
+
+                                <span>Confirmado</span>
+                            </td>
+
+                            <td class="colunaTabela">
+                                09
+                            </td>
+                        </tr>
+
+
+                        <tr>
+
+                            <td class="colunaTabela">
+                                <svg width="20" height="20">
+                                    <circle cx="8" cy="8" r="8" fill="red" />
+                                </svg>
+
+                                <span>Faltou</span>
+                            </td>
+
+                            <td class="colunaTabela">
+                                02
+                            </td>
+
+                        </tr>
+
+                        <tr>
+                            <td class="colunaTabela">
+                                <svg width="20" height="20">
+                                    <circle cx="8" cy="8" r="8" fill="#7B7B7B" />
+                                </svg>
+
+                                <span>Desmarcado</span>
+                            </td>
+
+                            <td class="colunaTabela">
+                                03
+                            </td>
+                        </tr>
+
+                    </table>
+
+                </div>
+
+                <div class="divMenor flex-grow-1">
+
+                    <h5 class="m-2">Buscar por data</h5>
+                    <hr>
+
+                    <form action="" method="get" class="m-4 d-flex flex-wrap flex-column">
+                        <div class="input-group mb-3 rounded-0">
+                            <input type="date" class="form-control rounded-0" aria-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-default">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Buscar</button>
+                    </form>
+
+                </div>
+
+
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+
+    </footer>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
